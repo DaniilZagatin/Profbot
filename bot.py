@@ -15,8 +15,8 @@ db_path = os.path.join(os.getenv('RAILWAY_DATA_DIR', '/mnt/data'), 'events.db')
 # Загружаем переменные окружения из .env файла
 load_dotenv()
 
-API_TOKEN = os.getenv('API_TOKEN')
-ADMIN_ID = int(os.getenv('ADMIN_ID'))  # Убедитесь, что значение конвертируется в int
+# API_TOKEN = os.getenv('API_TOKEN')
+# ADMIN_ID = int(os.getenv('ADMIN_ID'))  # Убедитесь, что значение конвертируется в int
 
 logging.basicConfig(level=logging.INFO)
 
