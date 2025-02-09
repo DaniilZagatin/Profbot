@@ -6,9 +6,14 @@ from aiogram.filters import Command
 from aiogram.enums import ParseMode
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.client.default import DefaultBotProperties
+from dotenv import load_dotenv
+import os
 
-API_TOKEN = '7550289263:AAGbz17PpdoqItrtA1tiWyc_f2mhP_nd220'
-ADMIN_ID = 1125145067  # Укажите ID администратора
+# Загружаем переменные окружения из .env файла
+load_dotenv()
+
+API_TOKEN = os.getenv('API_TOKEN')
+ADMIN_ID = int(os.getenv('ADMIN_ID'))  # Убедитесь, что значение конвертируется в int
 
 logging.basicConfig(level=logging.INFO)
 
