@@ -9,14 +9,11 @@ from aiogram.client.default import DefaultBotProperties
 from dotenv import load_dotenv
 import os
 
-# Подключение к базе данных с использованием постоянного хранилища
-db_path = os.path.join(os.getenv('RAILWAY_DATA_DIR', '/mnt/data'), 'events.db')
-
 # Загружаем переменные окружения из .env файла
 load_dotenv()
 
-# API_TOKEN = os.getenv('API_TOKEN')
-# ADMIN_ID = int(os.getenv('ADMIN_ID'))  # Убедитесь, что значение конвертируется в int
+API_TOKEN = os.getenv('API_TOKEN')
+ADMIN_ID = int(os.getenv('ADMIN_ID'))  # Убедитесь, что значение конвертируется в int
 
 logging.basicConfig(level=logging.INFO)
 
@@ -24,7 +21,7 @@ logging.basicConfig(level=logging.INFO)
 bot = Bot(token=API_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
 
-conn = sqlite3.connect(db_path)
+conn = sqlite3.connect("events.db")
 cursor = conn.cursor()
 
 # Создаем таблицы
